@@ -1,0 +1,19 @@
+.left {
+    /* text-align: right; */
+    margin: 20px;
+    margin-left: 300px;
+    /* display: block; */
+    
+}
+
+.blueline {
+    text-decoration: underline;
+    color: blue;
+}
+td, th {
+    padding: 10px;
+}
+
+fieldset{
+    display: inline-block;
+}

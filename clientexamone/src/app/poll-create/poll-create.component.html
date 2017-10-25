@@ -1,0 +1,72 @@
+<div style="text-align: right">
+<a [routerLink]="['dashboard']">Cancel</a>
+</div>
+
+<p>Put the question and options here:</p>
+
+<form (submit)="SubmitNewQuestion()" #formData='ngForm'>
+    Question: <input name='question'
+    class='long'
+    type="text"
+    required
+    minlength="8"
+    [(ngModel)]="questionobject.question"
+    #question='ngModel'
+    />
+    <span *ngIf=(question.errors)> Atleast 8 characters are required </span>
+    <br>
+    Option 1: <input name='option1'
+    type="text"
+    required
+    minlength="3"
+    [(ngModel)]="questionobject.option1"
+    #option1='ngModel'
+    />
+    <span *ngIf=(option1.errors)> Atleast 3 characters are required </span>
+    <br>
+    Option 2: <input name='option2'
+    type="text"
+    required
+    minlength="3"
+    [(ngModel)]="questionobject.option2"
+    #option2='ngModel'
+    />
+    <span *ngIf=(option2.errors)> Atleast 3 characters are required </span>
+    <br>
+    Option 3: <input name='option3'
+    type="text"
+    required
+    minlength="3"
+    [(ngModel)]="questionobject.option3"
+    #option3='ngModel'
+    />
+    <span *ngIf=(option3.errors)> Atleast 3 characters are required </span>
+    <br>
+    Option 4: <input name='option4'
+    type="text"
+    required
+    minlength="3"
+    [(ngModel)]="questionobject.option4"
+    #option4='ngModel'
+    />
+    <span *ngIf=(option4.errors)> Atleast 3 characters are required </span>
+    <br>
+
+    <input class='green' [disabled]='formData.invalid' type="submit" value="Create Poll">
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<router-outlet></router-outlet>  

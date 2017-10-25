@@ -1,0 +1,10 @@
+.left {
+    text-align: right;
+    margin-right: 100px;
+}
+fieldset{
+    display: inline-block;
+}
+table {
+    text-align: center;
+}
