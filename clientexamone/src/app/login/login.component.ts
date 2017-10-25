@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
   }
   
   onSubmit() {
-    // console.log(this.user.name)
+      // this.user.name = this.user.name.toLowerCase();    
       this._taskservice.createUser(this.user);
       }
 

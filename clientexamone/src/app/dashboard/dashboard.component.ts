@@ -37,9 +37,9 @@ export class DashboardComponent implements OnInit {
     })
   }
 
-  delete(id) {
-    // const i = this.allQuestions.indexOf(object);
-    this.allQuestions.splice(id, 1);
+  delete(id, object) {
+    const i = this.allQuestions.indexOf(object);
+    this.allQuestions.splice(i, 1);
     console.log("compnent id", this.allQuestions)
     this._taskservice.destroyQuestion(id);
   }

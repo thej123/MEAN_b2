@@ -28,7 +28,7 @@ Current Polls:
     <td>{{x.creater}}</td>
     <td [routerLink]="['poll', x._id]" class="blueline">{{x.question}}</td>
     <td>{{x.createdAt | date:'medium'}}</td>
-    <td><button *ngIf='x.creater == loggeduser' (click)='delete(x._id)'>Delete</button></td>
+    <td><button *ngIf='x.creater.toLowerCase() == loggeduser.toLowerCase()' (click)='delete(x._id, x)'>Delete</button></td>
   </tr>
 
 </table>
