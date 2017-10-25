@@ -11,6 +11,14 @@ var PollSchema = new mongoose.Schema({
     votesCount2: {type: Number, required: true},
     votesCount3: {type: Number, required: true},
     votesCount4: {type: Number, required: true},
+    // _options: [ {
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'Option',
+    // } ],
+    // _poll: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Poll'
+    // }
 }, {timestamps:true});
 
 mongoose.model('Poll', PollSchema);

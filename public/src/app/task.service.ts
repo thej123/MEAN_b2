@@ -10,20 +10,19 @@ export class TaskService {
 
   // LOGIN PAGE
   // get user_id if he exist in Usertable
-  getUser(user, gotuser, nouser) {
-    this.loggedUser = user;
-    // console.log("service", user)
-    this._http.post('/user', user).subscribe(
-      (response) => {
-        gotuser(true);
-        // console.log("2")        
-      },
-      (error) => {
-        nouser()
-        console.log("could not retrive all data", error)
-      }
-    );
-  }
+  // getUser(allusers) {
+  //   // this.loggedUser = user;
+  //   // console.log("service", user)
+  //   this._http.post('/user').subscribe(
+  //     (response) => {
+  //       allusers(true);
+  //       // console.log("2")        
+  //     },
+  //     (error) => {
+  //       console.log("could not retrive all data", error)
+  //     }
+  //   );
+  // }
   // create user in Usertable (if he does not exist before)
   createUser(user) {
     this.loggedUser = user.name;
@@ -54,16 +53,16 @@ export class TaskService {
     );
   }
   // get refined search of questions
-  getrefinedQuestions(searchTerm, callback) {
-    this._http.get('/refinedquestions').subscribe(
-      (response) => {
-        callback(response.json());
-      },
-      (error) => {
-        console.log("could not retrive refined data", error)
-      }
-    )
-  }
+  // getrefinedQuestions(searchTerm, callback) {
+  //   this._http.get('/refinedquestions').subscribe(
+  //     (response) => {
+  //       callback(response.json());
+  //     },
+  //     (error) => {
+  //       console.log("could not retrive refined data", error)
+  //     }
+  //   )
+  // }
   // delete one question
   destroyQuestion(id) {
     console.log("delete id", id)

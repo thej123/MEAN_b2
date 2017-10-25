@@ -3,7 +3,7 @@ var User = mongoose.model('User');
 
 module.exports = {
     findOne: function(req, res) {
-        console.log("inside showall");
+        console.log("inside user findone");
         console.log(req.body);
 
         User.findOne({name: req.body.user}, function (err, data) {

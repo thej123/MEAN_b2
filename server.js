@@ -8,7 +8,7 @@ app.use(bodyParser.json());
 // app.use(express.static(path.join(__dirname, './client/static')));
 // app.set('views', path.join(__dirname, './client/views'));
 
-app.use(express.static(path.join(__dirname, '/clientexamone/dist')));
+app.use(express.static(path.join(__dirname, '/public/dist')));
 // app.set('view engine', 'ejs');
 
 require('./server/config/mongoose.js');
