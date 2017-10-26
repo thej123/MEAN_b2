@@ -89,10 +89,11 @@ export class TaskService {
     )
   }
   // update the vote of a question
-  updateQuestion(id, updatedQuestionObject) {
+  updateQuestion(id, updatedQuestionObject, callback) {
     this._http.put("/question/"+id, updatedQuestionObject).subscribe(
       (response) => {
         console.log("updated", response);
+        callback()
       },
       (error) => {
         console.log(error);

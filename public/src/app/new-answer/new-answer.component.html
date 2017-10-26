@@ -1,13 +1,15 @@
-<a [routerLink]="['/']">Home</a>
+<a [routerLink]="['/']">Home</a> | 
 <a class='blueline' (click)="onbackQuestion()" >Go Back to Question</a>
 
 <div style="text-align: right">
   <a [routerLink]="['/index']">Logout</a>
   </div>
+  <router-outlet></router-outlet>  
+  
   
   <h1>{{ question.question }}</h1>
-  <h1>{{ question }}</h1>
   <p>{{ question.description }}</p>
+  <p>{{ question }}</p>
   
   <form (submit)="SubmitNewQuestion()" #formData='ngForm'>
       Your Answer: <input name='answer'
@@ -22,7 +24,9 @@
       />
       <span *ngIf=(question.errors)> Atleast 10 characters are required </span>
       <br>
-      Description: <input name='details'
+      Supporting details<br>
+      for your answer<br>
+      (optional): <input name='details'
       type="text"
       class='long'
       rows='10'
@@ -30,6 +34,6 @@
       [(ngModel)]="answerobject.details"
       />  <br>
       <button class='green' value="Cancel" (click)="onCancel()">Cancel</button>
-      <input class='green' [disabled]='formData.invalid' type="submit" value="Create Poll">
+      <input class='green' [disabled]='formData.invalid' type="submit" value="Submit">
   
   </form>

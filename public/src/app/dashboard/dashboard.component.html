@@ -1,11 +1,11 @@
-<h1>{{loggeduser}}</h1>
+<h1>Hi {{loggeduser}}</h1>
 
-<div class='left'>
+
   <a [routerLink]="['/new_question']">Add a Question</a>  
-  <a [routerLink]="['/index']">Logout</a>
-</div>
+  <a class='right' [routerLink]="['/index']">Logout</a>
 
-<input [(ngModel)]="searchText" class='left' placeholder="search for questions">
+ <span class='together'>Search:</span> 
+<input class='together' [(ngModel)]="searchText" class='left' placeholder="search for questions">
 <fieldset>
 <table>
   <tr>

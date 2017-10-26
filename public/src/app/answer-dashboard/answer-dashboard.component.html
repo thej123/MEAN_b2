@@ -9,7 +9,7 @@
   <p>{{ question.description }}</p>
 
   <table>
-    <tr *ngFor='let x of allanswers'>
+    <tr class='padding' *ngFor='let x of allanswers'>
       <td>
         {{x.name}}<br>
         <b>{{x.answer}}</b><br>
@@ -17,6 +17,5 @@
       </td>
       <td>{{x.likes}} likes</td>
       <td><button (click)='onLike(x._id, x)'>Like!</button></td>
-
     </tr>
   </table>

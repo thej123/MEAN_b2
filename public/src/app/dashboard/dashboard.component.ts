@@ -17,7 +17,8 @@ export class DashboardComponent implements OnInit {
 
   allQuestions = [];
 
-  constructor(private _taskservice: TaskService, private _router: Router) { }
+  constructor(private _taskservice: TaskService, private _router: Router) { 
+  }
 
   ngOnInit() {
     if(!this._taskservice.loggedUser){

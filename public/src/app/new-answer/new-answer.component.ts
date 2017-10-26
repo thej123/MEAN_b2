@@ -29,9 +29,9 @@ export class NewAnswerComponent implements OnInit {
       console.log("id time", this.questionID);
     })
     this.loggeduser = this._taskservice.loggedUser;
-    this._taskservice.getOneQuestion(this.questionID, (callback) => {
-      this.question = callback;
-      console.log(this.question)
+    this._taskservice.getOneQuestion(this.questionID, info => {
+      this.question = info;
+      console.log("question stuff", this.question)
     })
   }
 
@@ -49,10 +49,12 @@ export class NewAnswerComponent implements OnInit {
     console.log(this.answerobject);
     this._taskservice.createAnswer(this.answerobject, id => {
       this.question._answers.push(id);
-      this._taskservice.updateQuestion(this.questionID, this.question)
+      this._taskservice.updateQuestion(this.questionID, this.question, callback => {
+        this._router.navigate(['/']);
+      })
     });
 
-    this._router.navigate(['/']);
+    
   }
 
   onCancel() {

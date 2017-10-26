@@ -1,9 +1,13 @@
-.left {
+.right {
     /* text-align: right; */
     margin: 20px;
-    margin-left: 300px;
+    margin-left: 700px;
     display: block;
     
+}
+.together {
+    /* display: inline-block; */
+    margin-left: 700px; 
 }
 
 .blueline {
@@ -15,5 +19,5 @@ td, th {
 }
 
 fieldset{
-    display: inline-block;
+    display: block;
 }

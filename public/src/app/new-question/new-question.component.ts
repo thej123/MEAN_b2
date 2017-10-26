@@ -14,9 +14,9 @@ export class NewQuestionComponent implements OnInit {
   constructor(private _taskservice: TaskService, private _router: Router) { }
 
   ngOnInit() {
-    // if(!this._taskservice.loggedUser){
-    //   this._router.navigate(['/']);
-    // }
+    if(!this._taskservice.loggedUser){
+      this._router.navigate(['/']);
+    }
     // this.loggeduser = this._taskservice.loggedUser;
   }
 
