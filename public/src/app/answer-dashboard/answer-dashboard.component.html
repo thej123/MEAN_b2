@@ -1,0 +1,22 @@
+<a [routerLink]="['/']">Home</a>
+<a class='blueline' (click)="onQuestion()" >Answer this Question</a>
+
+<div style="text-align: right">
+  <a [routerLink]="['/index']">Logout</a>
+  </div>
+  
+  <h1>{{ question.question }}</h1>
+  <p>{{ question.description }}</p>
+
+  <table>
+    <tr *ngFor='let x of allanswers'>
+      <td>
+        {{x.name}}<br>
+        <b>{{x.answer}}</b><br>
+        {{x.details}}
+      </td>
+      <td>{{x.likes}} likes</td>
+      <td><button (click)='onLike(x._id, x)'>Like!</button></td>
+
+    </tr>
+  </table>

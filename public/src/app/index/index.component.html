@@ -1,0 +1,14 @@
+<h1>Q&A</h1>
+
+<form #formData='ngForm'>
+  Your Name: <input name='name'
+  class='long'
+  type="text"
+  required
+  minlength="1"
+  [(ngModel)]="user.name"
+  />
+  <input class='green' [disabled]='formData.invalid' 
+  type="button"  [routerLink]="['dashboard']" 
+  (click)="onSubmit()" value="Login">
+</form>

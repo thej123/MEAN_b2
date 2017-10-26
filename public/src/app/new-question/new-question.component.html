@@ -1,0 +1,33 @@
+<a [routerLink]="['/']">Home</a>
+
+<div style="text-align: right">
+  <a [routerLink]="['/index']">Logout</a>
+  </div>
+  
+  <h1>New Question</h1>
+  
+  <form (submit)="SubmitNewQuestion()" #formData='ngForm'>
+      Question: <input name='question'
+      class='long'
+      type="text"
+      rows='10'
+      cols='10'
+      required
+      minlength="10"
+      [(ngModel)]="questionobject.question"
+      #question='ngModel'
+      />
+      <span *ngIf=(question.errors)> Atleast 10 characters are required </span>
+      <br>
+      Description:<br>
+      (optional) <input name='description'
+      type="text"
+      class='long'
+      rows='10'
+      cols='10'
+      [(ngModel)]="questionobject.description"
+      />  <br>
+      <button class='green' value="Cancel" (click)="onCancel()">Cancel</button>
+      <input class='green' [disabled]='formData.invalid' type="submit" value="Create Poll">
+  
+  </form>

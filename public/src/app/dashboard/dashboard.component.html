@@ -1,0 +1,25 @@
+<h1>{{loggeduser}}</h1>
+
+<div class='left'>
+  <a [routerLink]="['/new_question']">Add a Question</a>  
+  <a [routerLink]="['/index']">Logout</a>
+</div>
+
+<input [(ngModel)]="searchText" class='left' placeholder="search for questions">
+<fieldset>
+<table>
+  <tr>
+    <th>Question</th>
+    <th>Answers</th>
+    <th>Action</th>
+  </tr>
+  
+  <tr *ngFor='let x of allQuestions | mypipe: searchText'>
+    <td>{{x.question}}</td>
+    <td>{{x._answers.length}}</td>
+    <td><button (click)="onShow(x._id)" class="blueline">Show</button><button (click)="onAnswer(x._id)" class="blueline">Answer</button></td>
+  </tr>
+
+</table>
+</fieldset>
+<router-outlet></router-outlet>  

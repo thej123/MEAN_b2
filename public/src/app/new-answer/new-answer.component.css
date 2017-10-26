@@ -1,0 +1,11 @@
+.long {
+    width: 40%;
+    height: 100px;
+}
+input {
+    margin: 10px;
+}
+.blueline {
+    text-decoration: underline;
+    color: blue;
+}

@@ -101,7 +101,7 @@ export class TaskService {
   }
   // create a new question
   createQuestion(question) {
-    console.log("create me",question)
+    console.log("create question",question)
     this._http.post('/question', question).subscribe(
       (response) => {
         console.log("note sent to base", response);
@@ -111,6 +111,42 @@ export class TaskService {
       }
     );
   }
+  // create a new answer
+  createAnswer(answer, callback) {
+    console.log("create answer",answer)
+    this._http.post('/answer', answer).subscribe(
+      (response) => {
+        callback(response.json());
+        console.log("note sent to base", response);
+      },
+      (error) => {
+        console.log("could not add note", error);
+      }
+    );
+  }
+  getAnswers(id, callback) {
+    console.log("get answers",id);
+    this._http.get('/answers/'+id).subscribe(
+      (response) => {
+        callback(response.json());
+        // console.log("2")        
+      },
+      (error) => {
+        console.log("could not retrive all data", error)
+      }
+    );
+  }
+    // update the vote of a answer
+    updateAnswer(id, updatedQuestionObject) {
+      this._http.put("/answer/"+id, updatedQuestionObject).subscribe(
+        (response) => {
+          console.log("updated", response);
+        },
+        (error) => {
+          console.log(error);
+        }
+      )
+    }
 
 
 }

@@ -1,0 +1,35 @@
+<a [routerLink]="['/']">Home</a>
+<a class='blueline' (click)="onbackQuestion()" >Go Back to Question</a>
+
+<div style="text-align: right">
+  <a [routerLink]="['/index']">Logout</a>
+  </div>
+  
+  <h1>{{ question.question }}</h1>
+  <h1>{{ question }}</h1>
+  <p>{{ question.description }}</p>
+  
+  <form (submit)="SubmitNewQuestion()" #formData='ngForm'>
+      Your Answer: <input name='answer'
+      class='long'
+      type="text"
+      rows='10'
+      cols='10'
+      required
+      minlength="5"
+      [(ngModel)]="answerobject.answer"
+      #question='ngModel'
+      />
+      <span *ngIf=(question.errors)> Atleast 10 characters are required </span>
+      <br>
+      Description: <input name='details'
+      type="text"
+      class='long'
+      rows='10'
+      cols='10'
+      [(ngModel)]="answerobject.details"
+      />  <br>
+      <button class='green' value="Cancel" (click)="onCancel()">Cancel</button>
+      <input class='green' [disabled]='formData.invalid' type="submit" value="Create Poll">
+  
+  </form>
