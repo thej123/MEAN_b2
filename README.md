@@ -10,5 +10,7 @@ Requirements: Angular NodeJS MongoDB
 To excute:
 
 'ng build' to build Angular
+
 'mongod' to start MongoDB
+
 'node Bicyclemarketplace' to start the server
